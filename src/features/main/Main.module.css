@@ -1,0 +1,38 @@
+.main {
+    height: 80vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.newsImageBox {
+    max-width: 500px;
+}
+
+.newsImage {
+    height: auto;
+    width: 90%;
+
+}
+
+.textBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    margin-top: 20px;
+    color: white;
+    background-color: slategrey;
+    border-radius: 35px;
+    width: 150px;
+    height: 40px;
+    border: 2px solid #505c65
+}
+
+.button:active {
+    background-color: #505c65;
+}

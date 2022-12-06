@@ -1,12 +1,14 @@
 .header {
     position: fixed;
     top: 0;
-    width: 100%;
+    left:0;
+    right:0;
     list-style-type: none;
-    margin: 0;
+    margin: 20px;
     padding: 0;
     overflow: hidden;
     background-color: slategrey;
+    border-radius: 35px;
 }
 
 .link {
