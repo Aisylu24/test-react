@@ -12,7 +12,7 @@ export const Pages = () => {
             <Route path={ROUTES.MAIN} element={<Main/>}/>
             <Route path={ROUTES.NEWS} element={<Articles/>}/>
             <Route path={ROUTES.ERROR} element={<h1>404: PAGE NOT FOUND</h1>}/>
-            <Route path='/*' element={<Navigate to='404'/>}/>
+            <Route path='/*' element={<Navigate to={ROUTES.ERROR}/>}/>
         </Routes>
         </div>
     );
