@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Article, ArticleType} from './article/Article';
 import s from './Articles.module.css';
 import {Pagination} from "../../common/components/pagination/Pagination";
+import {fetchNews} from "../../api/news-api";
 
 type DataType = {
     articles: Array<ArticleType>
@@ -11,26 +12,28 @@ type DataType = {
 }
 
 export const Articles = () => {
-    const [error, setError] = useState<string| undefined>('');
+    const [error, setError] = useState<string | undefined>('');
     const [loader, setLoader] = useState(false);
     const [news, setNews] = useState<Array<ArticleType>>([])
     const [currentPage, setCurrentPage] = useState(1)
     const [totalResults, setTotalResults] = useState(0)
 
-    useEffect(() => {
-        fetch(`https://newsapi.org/v2/everything?sources=techcrunch&pageSize=6&page=${currentPage}&apiKey=c3c33d7b2b384cfca9242957584d5df3`)
-            .then(res => res.json())
-            .then((data: DataType) => {
+    useEffect( () => {
+        (async ()=> {
+            try {
+                const data:DataType = await fetchNews(currentPage)
                 if (data.status === 'ok') {
-                    setNews(data.articles);
-                    setTotalResults(data.totalResults)
+                setNews(data.articles);
+                setTotalResults(data.totalResults)
                 } else {
                     setError(data.message)
                 }
-            })
-            .finally(() => {
+            } catch (error) {
+                setError(error as string)
+            } finally {
                 setLoader(true);
-            })
+            }
+        })()
     }, [currentPage])
 
     const onPageChangedHandler = (page: number) => {
