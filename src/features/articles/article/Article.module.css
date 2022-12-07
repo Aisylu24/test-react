@@ -1,10 +1,25 @@
 .articleContainer {
     width: 600px;
     min-width: 50px;
+    background-color: white;
 }
 
 .image {
     width: 40%;
     height: auto;
     min-width: 40px;
+}
+
+@media screen and (max-width: 1219px) {
+    .articleContainer {
+        width: 400px;
+        min-width: 50px;
+    }
+}
+
+@media screen and (max-width: 799px) {
+    .articleContainer {
+        width: 40%;
+        min-width: 50px;
+    }
 }

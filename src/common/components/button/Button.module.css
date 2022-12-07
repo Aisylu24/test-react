@@ -11,3 +11,10 @@
 .button:active {
     background-color: #505c65;
 }
+
+
+@media screen and (max-width: 799px) {
+    .button {
+        width: 50%;
+    }
+}
