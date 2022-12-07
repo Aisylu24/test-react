@@ -1,0 +1,10 @@
+.articleContainer {
+    width: 600px;
+    min-width: 50px;
+}
+
+.image {
+    width: 40%;
+    height: auto;
+    min-width: 40px;
+}

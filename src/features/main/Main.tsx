@@ -1,15 +1,9 @@
 import React from 'react';
 import s from './Main.module.css'
-import { useNavigate } from "react-router-dom";
 import {ROUTES} from "../../common/enums/enums";
+import {Button} from "../../common/components/button/Button";
 
 export const Main = () => {
-
-    let navigate = useNavigate();
-
-    const navigateHandler = () => {
-     navigate(ROUTES.NEWS)
-    }
 
     return (
         <div className={s.main}>
@@ -19,7 +13,7 @@ export const Main = () => {
             <div className={s.textBox}>
                 <h1>WELCOME TO OUR WEBSITE!</h1>
                 <div>We're glad you're here</div>
-                <button className={s.button} onClick={navigateHandler}>News</button>
+                <Button name={'News'} route={ROUTES.NEWS} />
             </div>
         </div>
     );
